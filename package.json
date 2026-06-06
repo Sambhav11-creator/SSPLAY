@@ -1,0 +1,17 @@
+{
+  "name": "ssplay",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SSPLAY — Premium cinematic music streaming platform",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:client": "npm run dev --prefix client",
+    "dev:server": "node -e \"const p=require('path').join('venv',process.platform==='win32'?'Scripts/python':'bin/python');require('child_process').spawn(p,['run.py'],{cwd:'server',stdio:'inherit',shell:true})\"",
+    "build": "npm run build --prefix client",
+    "seed": "node -e \"const p=require('path').join('venv',process.platform==='win32'?'Scripts/python':'bin/python');require('child_process').spawnSync(p,['../scripts/seed.py'],{cwd:'server',stdio:'inherit',shell:true})\"",
+    "start:server": "node -e \"const p=require('path').join('venv',process.platform==='win32'?'Scripts/python':'bin/python');require('child_process').spawn(p,['run.py'],{cwd:'server',stdio:'inherit',shell:true})\""
+  },
+  "keywords": ["music", "streaming", "ssplay"],
+  "author": "SSPLAY",
+  "license": "MIT"
+}

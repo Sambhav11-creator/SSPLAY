@@ -1,0 +1,83 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ss-black: #050508;
+  --color-ss-dark: #0a0a12;
+  --color-ss-card: rgba(18, 18, 32, 0.65);
+  --color-ss-purple: #a855f7;
+  --color-ss-purple-glow: #c084fc;
+  --color-ss-blue: #3b82f6;
+  --color-ss-blue-glow: #60a5fa;
+  --color-ss-neon: #e879f9;
+  --font-display: 'Segoe UI', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-display);
+  background: var(--color-ss-black);
+  color: #f8fafc;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.glass {
+  background: rgba(15, 15, 28, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(168, 85, 247, 0.15);
+}
+
+.glass-strong {
+  background: rgba(10, 10, 20, 0.75);
+  backdrop-filter: blur(32px);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #c084fc 0%, #60a5fa 50%, #e879f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(59, 130, 246, 0.15) 50%, transparent 100%);
+}
+
+.neon-glow {
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.35), 0 0 80px rgba(59, 130, 246, 0.15);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.player-safe {
+  padding-bottom: 120px;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
